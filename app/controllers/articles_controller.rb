@@ -3,8 +3,8 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.xml
   def index
-    @articles = Article.all
-
+    @articles = Article.all(:include => :user)
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @articles }
@@ -42,8 +42,10 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.xml
   def create
+  	authorize! :create, @article
     @article = Article.new(params[:article])
-    authorize! :create, @article
+    @article.user_id = current_user.id
+    
     respond_to do |format|
       if @article.save
         format.html { redirect_to(@article, :notice => 'Article was successfully created.') }

@@ -1,0 +1,10 @@
+<div id="tag_title">  
+  <h3>Tags</h3>
+</div>
+<div id= "tags" class = "span-4 last">
+<% cache('all_tags') do %>	 
+  <% for tag in Tag.find(:all, :order => 'name') %>
+    <li><%= link_to "#{tag.name}", tag_path(tag) %></li>
+  <% end %>
+</div>
+<% end %>

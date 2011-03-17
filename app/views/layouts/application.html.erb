@@ -13,6 +13,8 @@
   <div class="span-17 colborder" id="content">
     <%= yield %>
   </div>
-  <div class="span-4 last" id="sidebar"></div>
+  <div class="span-4 last" id="sidebar">
+  	<%= render(:partial => 'shared/side') %>
+  </div>
 </div>
 </body>

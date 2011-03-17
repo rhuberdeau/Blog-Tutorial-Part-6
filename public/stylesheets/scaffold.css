@@ -67,6 +67,24 @@ margin-bottom:0;
 padding-left: 0;
 }
 
+/* Article Index Page */
+.article_index {
+  padding:0 1.5em 0 1.5em;
+  margin-bottom:1.5em;
+}
+.article_body{
+  margin-bottom:1.5em;
+}
+.article_index h2 {
+  font-size:2em;
+  margin-bottom: 0;
+ 
+}
+.article_header {
+  margin-bottom: 15px;  
+}
+
+
 .field_with_errors {
   padding: 2px;
   background-color: red;
