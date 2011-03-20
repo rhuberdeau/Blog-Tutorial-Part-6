@@ -26,7 +26,7 @@
 <div id ="comments">
   <%= render :partial => @article.comments %>
 </div>
-<%= form_for([@article, @article.comments.build]) do |f| %>
+<%= form_for([@article, @comment]) do |f| %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
